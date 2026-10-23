@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            #vid {
+                /*position: absolute;*/
+                display: block;
+                /*left: 0;
+                top: 0;*/
+                max-width:100%;
+                max-height: calc(100vh - 60px); /*calc(100vh - 70px);*/
+                width: auto;
+                height: auto;
+            }
+
+            #container {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                width:100vw;
+                height:calc(100vh - 20px);
+            }
+
+            #vidcaption {
+                font-size: 25px;
+                color: #007aff;
+                margin-bottom: 10px;
+            }
+
+        </style>
+        <title></title>
+        <script>
+            var titles = {
+                'select-input-mode': [{
+                        start: 0,
+                        end: 3.8,
+                        msg: 'Drag empty area to multi select'
+                    },
+                    {
+                        start: 4.1,
+                        end: 6,
+                        msg: 'Clik a shape to select'
+                    },
+                    {
+                        start: 6.1,
+                        end: 9,
+                        msg: 'Cmd + Click shapes to multi select'
+                    },
+                    {
+                        start: 10,
+                        end: 14,
+                        msg: 'Double click to add text'
+                    },
+                    {
+                        start: 14.2,
+                        end: 18,
+                        msg: 'Two fingers drag to scroll'
+                    },
+                    {
+                        start: 18.5,
+                        end: 20,
+                        msg: 'Mouse wheel to scroll'
+                    },
+                    {
+                        start: 20,
+                        end: 25,
+                        msg: 'Cmd + Mouse drag to scroll'
+                    },
+                    {
+                        start: 25.1,
+                        end: 30,
+                        msg: 'Alt + Mouse drag to duplicate a shape'
+                    }
+                ],
+                'smart-draw-mode': [{
+                        start: 0,
+                        end: 9,
+                        msg: 'Drag to draw basic shapes'
+                    },
+                    {
+                        start: 9.1,
+                        end: 13,
+                        msg: 'Double click to add text'
+                    },
+                    {
+                        start: 13.1,
+                        end: 15,
+                        msg: 'Click a shape to select'
+                    },
+                    {
+                        start: 15.1,
+                        end: 17,
+                        msg: 'Cmd + Click shapes to multi select'
+                    },
+                    {
+                        start: 18,
+                        end: 24.8,
+                        msg: 'Two fingers drag to scroll'
+                    },
+                    {
+                        start: 25,
+                        end: 27,
+                        msg: 'Mouse wheel to scroll'
+                    },
+                    {
+                        start: 27.1,
+                        end: 31,
+                        msg: 'Cmd + Mouse drag to scroll'
+                    }
+                ],
+                'scroll-input-mode': [{
+                        start: 0,
+                        end: 4,
+                        msg: 'Drag to scroll'
+                    }
+                ],
+                'draw-input-mode': [{
+                        start: 0,
+                        end: 10,
+                        msg: 'Drag to draw'
+                    },
+                    {
+                        start: 10.6,
+                        end: 14,
+                        msg: 'Two fingers drag to scroll'
+                    },
+                    {
+                        start: 14.2,
+                        end: 16,
+                        msg: 'Mouse wheel to scroll'
+                    },
+                    {
+                        start: 16.1,
+                        end: 19,
+                        msg: 'Cmd + Mouse drag to scroll'
+                    }
+                ],
+                'erase-input-mode': [{
+                        start: 0,
+                        end: 3.9,
+                        msg: 'Drag to erase'
+                    },
+                    {
+                        start: 4,
+                        end: 6.2,
+                        msg: 'Two fingers drag to scroll'
+                    },
+                    {
+                        start: 6.3,
+                        end: 9,
+                        msg: 'Mouse wheel to scroll'
+                    },
+                    {
+                        start: 9.1,
+                        end: 12,
+                        msg: 'Cmd + Mouse drag to scroll'
+                    }
+                ],
+                'text-input-mode': [{
+                        start: 0,
+                        end: 4,
+                        msg: 'Click to add text'
+                    }
+                ],
+                'drawing_connection': [{
+                        start: 0,
+                        end: 28,
+                        msg: 'Draw connection lines in different ways'
+                    },
+                    {
+                        start: 28.1,
+                        end: 33,
+                        msg: 'Draw and erase arrows'
+                    },
+                    {
+                        start: 33.1,
+                        end: 50,
+                        msg: 'Customize connection lines'
+                    },
+                    {
+                        start: 50.1,
+                        end: 55,
+                        msg: 'Double click to add text on connection'
+                    },
+                    {
+                        start: 55.1,
+                        end: 60,
+                        msg: 'Move the text on connection line while connection is selected'
+                    },
+                    {
+                        start: 60,
+                        end: 80,
+                        msg: 'Change arrows using selection menu'
+                    }
+                ],
+                'drawing_polygon': [{
+                        start: 0,
+                        end: 22.5,
+                        msg: 'Draw shapes'
+                    },
+                    {
+                        start: 22.6,
+                        end: 28,
+                        msg: 'Draw connections'
+                    },
+                    {
+                        start: 28.1,
+                        end: 35,
+                        msg: 'Select and move a shape to align'
+                    },
+                    {
+                        start: 35.1,
+                        end: 42,
+                        msg: 'Double click to add text'
+                    },
+                    {
+                        start: 42.1,
+                        end: 56,
+                        msg: 'Erase and redraw arrows on connectors'
+                    },
+                    {
+                        start: 56.1,
+                        end: 64,
+                        msg: 'Double click on connectors to add text'
+                    },
+                    {
+                        start: 64.1,
+                        end: 70,
+                        msg: 'Use selection menu to set fill or line colors'
+                    }
+                ],
+                'drawing_path': [{
+                        start: 0,
+                        end: 7,
+                        msg: 'Draw line, polyline and curves'
+                    },
+                    {
+                        start: 7.1,
+                        end: 12.5,
+                        msg: 'Draw line, multiline or curve connectors'
+                    },
+                    {
+                        start: 12.6,
+                        end: 26,
+                        msg: 'Click on the end points (black/blue circles) and drag to move them'
+                    },
+                    {
+                        start: 26.1,
+                        end: 35,
+                        msg: 'Draw and erase arrows on lines, curves and connectors'
+                    },
+                ],
+                'selection_menu_path': [{
+                        start: 0,
+                        end: 16,
+                        msg: 'Click on the end points (black/blue circles) and drag to move them'
+                    },
+                    {
+                        start: 16.1,
+                        end: 25,
+                        msg: 'Change line color and styles using selection menu'
+                    },
+                    {
+                        start: 25.1,
+                        end: 34,
+                        msg: 'Resize and rotate by dragging the corners of selection rectangle'
+                    },
+                    {
+                        start: 34.1,
+                        end: 47,
+                        msg: 'Change arrows at the end point of lines and curves'
+                    }
+                ],
+                'selection_menu_generic': [{
+                        start: 0,
+                        end: 8,
+                        msg: 'Double click to add text'
+                    },
+                    {
+                        start: 8.1,
+                        end: 28,
+                        msg: 'Use selection menu to change fill color, line and text style'
+                    },
+                    {
+                        start: 28.1,
+                        end: 37,
+                        msg: 'Drag selection rectangle corners to resize and rotate'
+                    },
+                    {
+                        start: 37.1,
+                        end: 42,
+                        msg: 'Use selection menu to duplicate shapes'
+                    }
+                ],
+                'selection_menu_multiselected': [{
+                        start: 0,
+                        end: 8,
+                        msg: 'Change fill color and line color using selection menu'
+                    },
+                    {
+                        start: 8.1,
+                        end: 10,
+                        msg: 'Use selection menu to group selected shapes'
+                    },
+                    {
+                        start: 10.1,
+                        end: 19,
+                        msg: 'Drag corners of selection to resize and rotate the grouped shape'
+                    },
+                    {
+                        start: 19.1,
+                        end: 22,
+                        msg: 'Use selection menu to un-group the grouped shape'
+                    }
+                ],
+                'selection_menu_connection': [{
+                        start: 0,
+                        end: 7,
+                        msg: 'Draw and erase arrows at the end of connection lines'
+                    },
+                    {
+                        start: 7,
+                        end: 11,
+                        msg: 'Double click to add text on connection lines'
+                    },
+                    {
+                        start: 11,
+                        end: 16,
+                        msg: 'Move the text on connection line while connector is selected'
+                    },
+                    {
+                        start: 16,
+                        end: 30,
+                        msg: 'Customize connection lines by moving end points'
+                    },
+                    {
+                        start: 30,
+                        end: 42,
+                        msg: 'Change arrows using selection menu'
+                    },
+                    {
+                        start: 42,
+                        end: 46,
+                        msg: 'Swap arrows'
+                    }
+                ],
+                'bpmn_help': [{
+                        start: 0,
+                        end: 24,
+                        msg: 'Set activity type, task type and task markers through setting menu'
+                    },
+                    {
+                        start: 25,
+                        end: 24,
+                        msg: 'Set event group, event type and other event properties through setting menu'
+                    },
+                    {
+                        start: 25,
+                        end: 40,
+                        msg: 'Set event group, event type and other event properties through setting menu'
+                    },
+                    {
+                        start: 41,
+                        end: 49,
+                        msg: 'Set gateway type through setting menu'
+                    },
+                    {
+                        start: 50,
+                        end: 54,
+                        msg: 'Set data object attributes though setting menu'
+                    },
+                    {
+                        start: 55,
+                        end: 82,
+                        msg: 'Configure choreography through setting menu'
+                    },
+                    {
+                        start: 83,
+                        end: 88,
+                        msg: 'Configure conversation object through setting menu'
+                    },
+                    {
+                        start: 89,
+                        end: 103,
+                        msg: 'Change number of lanes and lane size through setting menu'
+                    }
+                ]
+            }
+            var curTitles;
+            var idx = 0;
+            var showingIndex = -1;
+            var spanElement;
+
+            function updateCaption(vid) {
+                while (idx < curTitles.length) {
+                    if (vid.currentTime < curTitles[idx].start) {
+                        return;
+                    } else if (vid.currentTime >= curTitles[idx].end) {
+                        removeCaption();
+                        idx++;
+                    } else {
+                        updateForIndex(idx);
+                        break;
+                    }
+                }
+            }
+
+            function removeCaption() {
+                showingIndex = -1;
+                spanElement.innerHTML = "&nbsp;";
+            }
+
+            function updateForIndex(index) {
+                if (index == showingIndex) {
+                    return;
+                }
+                showingIndex = index;
+                var msg = curTitles[index].msg;
+                if (!spanElement) {
+                    spanElement = document.getElementById('vidcaption');
+                }
+                spanElement.innerHTML = msg;
+            }
+        </script>
+    </head>
+    <body style="background-color: #cccccc;">
+        <div id="container">
+            <span id="vidcaption">&nbsp;</span>
+            <video id="vid" autoplay muted playsinline></video>
+        </div>
+        <script>
+            function ready(fn) {
+                if (document.readyState !== 'loading') {
+                    fn();
+                    return;
+                }
+                document.addEventListener('DOMContentLoaded', fn);
+            }
+            ready(function() {
+                let vid = document.getElementById("vid");
+                vid.addEventListener('loadeddata', function() {
+                    //vid.textTracks[0].mode = "showing";
+                    window.setTimeout(function() {
+                        if (vid.paused) {
+                            //vid.setAttribute("controls", "controls");
+                            vid.play();
+                        }
+                    }, 2000);
+                });
+                vid.addEventListener('timeupdate', function() { updateCaption(vid); });
+                vid.addEventListener('ended', function () {
+                    idx = 0;
+                    this.play();
+                })
+                
+                const queryString = window.location.search;
+                let parts = window.location.search.split("=");
+                let name = "";
+                if (parts.length > 1) {
+                    name = parts[1];
+                }
+    
+                curTitles = titles[name];
+                /*
+                let track = document.createElement("track");
+                track.kind = "captions";
+                track.label = "English";
+                track.srclang = "en";
+                track.src = "./" + name + ".vtt";
+                vid.appendChild(track);
+                track.mode = "showing";
+                track.addEventListener("load", function() {
+                    this.mode = "showing";
+                    video.textTracks[0].mode = "showing";
+                });*/
+    
+                let source = document.createElement('source');
+                source.setAttribute('src', './' + name + ".mp4");
+                source.setAttribute('type', 'video/mp4');
+                vid.appendChild(source);
+            });
+        </script>
+    </body>
+</html>

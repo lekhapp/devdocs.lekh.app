@@ -1,0 +1,10 @@
+<!doctype html>
+<!-- Device-check start page (verification 06 DEV-23). Debug builds only:
+     iOS  -LekhStartPath /debug-samples.html ; Android  -es lekhStartPath /debug-samples.html
+     Turns on the samples-per-event overlay for this session and opens On device; open a board,
+     choose Pen and draw (src/board/debug/SamplesOverlay.tsx). -->
+<html><head><meta charset="utf-8"><title>Lekh debug</title></head>
+<body><script>
+try { sessionStorage.setItem('lekh_debug_routes', '1'); sessionStorage.setItem('lekh_debug_samples', '1'); } catch (e) {}
+location.replace('/#/docs/offline');
+</script></body></html>

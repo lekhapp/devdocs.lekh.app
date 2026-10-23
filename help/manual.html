@@ -1,0 +1,612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" type="text/css" href="help_lekh_manual.css" />
+        <title>Lekh</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <div id="page">
+                        <div id="doctitle">Lekh Diagram</div>
+                        <div class="center" style="margin-top: 20px;"><a href="http://www.lekhapp.com">https://www.lekhapp.com</a></div>
+                        <div class="center" style="margin-top: 10px;"><a href="mailto:info@lekhapp.com" target="_top">info@lekhapp.com</a></div>
+                        <br/><br/><br/><br/>
+                        <div class="contentTitle"><h1>Introduction</h1></div>
+                        <div class="contentText">
+                            <p>Lekh Diagram is a sketch recognition diagramming app. Using Lekh Digram you can create different kinds of diagrams for example, block digram, flow chart, UI wireframe, organizational chart etc. Lekh Diagram offers a free hand drawing mode and recognizes basic shapes that your scribble with your finger or pencil of your iPad. The details of shape recognition is provided below this this document.</p>
+                            <br/>
+                            <p>Apart from recognizing basic shapes, the Lekh Diagram also offers large set of predefined library of shapes and symbols which user can add into a diagram. The shape library includes UI wireframe, flow chart, networking symbols, icons etc.</p>
+                            <br>
+                            <p>This YouTube video demonstrates the shape recognition capabilities of Lekh Diagram. This video is done with some old version of the Lekh Diagram, but all the shape recognition capabilities remain same.</p>
+                            <p><a href="https://www.youtube.com/watch?v=jMFROJpQxt0">https://www.youtube.com/watch?v=jMFROJpQxt0</a></p>
+                        </div>
+                        <div class="contentTitle"><h1>Platforms</h1></div>
+                        <div class="contentText">
+                            <p>Lekh Diagram is available for <strong>iPad</strong>, <strong>iPhone</strong> and <strong>Android</strong> devices. As, the new features in the app are introduced first in <strong>iOS</strong> version then later ported to Android version, right now the Android version is behind iOS version in terms of feature set. The lacking features are mostly in the shape library. </p>
+                            <br>
+                            <p>This manual is for iOS version of the app. For the android version of the app, users are advised to look into in-app help of Lekh Diagram Android app. The concepts are same, there few UI differences.</p>
+                            <br>
+                            <p>Download link for iOS: <a href="https://apps.apple.com/us/app/lekh-diagram/id576124115">https://apps.apple.com/us/app/lekh-diagram/id576124115</a></p>
+                            <p>Download link for Android: <a href="https://play.google.com/store/apps/details?id=com.avabodh.lekh">https://play.google.com/store/apps/details?id=com.avabodh.lekh</a></p>
+                            <br/>
+                            <p><strong>Desktop (pc, mac) and web version is under devlopment</strong></p>
+                        </div>
+                        <div class="contentTitle"><h1>iPad app user interface</h1></div>
+                        <p style="text-align:center"><img src="help_app_screen.png" style="width:700px;"/></p>
+                        <div class="contentText">
+                            <ol>
+                                <li>Undo action</li>
+                                <li>Redo action</li>
+                                <li>Organize diagrams. Create new, rename, duplicate and delete diagrams</li>
+                                <li>Open shape library. Shape library contains predefined shapes which can be added to canvas simply by tapping on them</li>
+                                <li>Export diagrams in various formats</li>
+                                <li>Miscellaneous operations: Clear drawing canvas, change background, insert images and various settings</li>
+                                <li>Show help</li>
+                                <li>Change text font, size and color</li>
+                                <li>Change stroke width, stroke color, fill color and make dashed stroke</li>
+                                <li>Drawing mode button. In drawing mode shapes and connections can be drawn on canvas. The canvas can be scrolled by two finger panning</li>
+                                <li>Selection mode button. In selection mode multiple shapes can be selected together which can be moved, duplicated and deleted together. The canvas can be scrolled by two finger panning</li>
+                                <li>Scrolling mode. In scrolling mode, single finger panning will scroll canvas</li>
+                                <li>Snap to grid button. Toggle button to enable/disable snap to grid feature</li>
+                                <li>Canvas area</li>
+                            </ol>
+                            <br/>
+                        </div>
+                        <div class="contentTitle"><h1>iPhone app user interface</h1></div>
+                        <div class="center"><img src="iphone_help_app_screen.png"/></div>
+                        <div class="contentText">
+                            <ol style="margin-left: -14px;">
+                                <li>Undo action button</li>
+                                <li>Redo action button</li>
+                                <li style="text-align: justify;">Change input mode from one of these: Drawing, Selection, Scrolling. In drawing mode shapes and connections can be drawn on canvas. In selection mode, multiple shapes can be selected and moved together. Selected shapes can also be deleted and duplicated together. In Scrolling mode, single finger pan will scroll canvas while in drawing and selection mode, two finger panning can be used to scroll canvas</li>
+                                <li style="text-align: justify;">Canvas and stroke property button. Following actions can be performed: clear canvas, change text font and color, change stroke width and color, insert image, change background and settings</li>
+                                <li style="text-align: justify;">Organize diagrams, export and import diagrams, and show help</li>
+                                <li style="text-align: justify;">Collapse menu buttons so that more space is available for drawing</li>
+                                <li>Drawing area</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="contentTitle"><h1>Modes</h1></div>
+                        <div class="contentText">
+                            <p>A user can operate on canvas in three modes. The above screenshots describe how a user can change mode by clicking mode button in the UI.</p>
+                            <ol style="margin-left: -14px;">
+                                <li><strong>Drawing: </strong>In this mode user can do free hand drawing. The Lekh Diagram will recognize shapes and connections. Please note that the Lekh Diagram recognizes single stroke drawing so the user will have to draw shapes like rectangle, circle, triangle etc in single stroke. The single stroke means, once user starts drawing, the user has to finish drawing before lifting finger (or pencil) from the device. In this mode if you click a shape, it will be selected. Users can do multiple operations on a selected shape e.g. resize, move, rotate, delete etc.</li>
+                                <li><strong>Selection: </strong>In this mode, dragging finger/pencil on canvas will select or multi select shapes on canvas. User can perform operations such as delete, move etc on selected shapes.</li>
+                                <li><strong>Scrolling: </strong>In this mode, dragging finger/pencil on canvas will scroll the canvas.</li>
+                            </ol>
+                            <p><strong>Two finger dragging</strong> in any mode will scroll the canvas.</p>
+                        </div>
+                        <div class="contentTitle"><h1>Context Menu</h1></div>
+                        <table>
+                            <tr>
+                                <td style="width:30%; padding-top: 25px;">
+                                    <p style="text-align: center;">
+                                        <strong>Long press on any shape</strong><br/>
+                                    </p>
+                                    <img class="context_menu_img" src="help_ctxm_1.png" />
+                                </td>
+                                <td style="width:70%; padding-top: 25px;">
+                                    <ul>
+                                        <li><strong>To Front:</strong> Make selected shape as topmost shape.</li>
+                                        <li><strong>To Back:</strong> Move selected shape behind all other shapes.</li>
+                                        <li><strong>Flip Horizontal:</strong> Flip selected shape horizontally.</li>
+                                        <li><strong>Flip Vertical:</strong> Flip selected shape vertically.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:30%; padding-top: 25px; text-align: center;">
+                                    <strong>Long press on empty area</strong> <br/>
+                                    <img src="help_ctxm_2.png" />
+                                </td>
+                                <td style="width:70%; padding-top: 25px;">
+                                    <ul>
+                                        <li>
+                                            Change input mode to selection and select all shapes.
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="contentTitle"><h1>Basic usage</h1></div>
+                        <div class="contentText">
+                            <p>In this section and the following sections, the dot <img src="help_finger_dot.png" style="vertical-align: middle;display: inline-block;"/> represents position of finger or fingers on device while drawing."</p>
+                        </div>
+                        <table class="basic_table">
+                            <tr>
+                                <td>
+                                    Draw a shape<br/>
+                                    <img src="help_basic_1.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Shape will be recognized<br/>
+                                    <img src="help_basic_2.png"/>
+                                </td>
+                                <td>
+                                    Tap on shape to select<br/>
+                                    <img src="help_basic_3.png"/>
+                                </td>
+                                <td>
+                                    Drag selected shape to move<br/>
+                                    <img src="help_basic_4.png"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Double tap to add text<br/>
+                                    <img src="help_basic_5.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Pinch gesture to zoom selected shape<br/>
+                                    <img src="help_basic_6.png" />
+                                </td>
+                                <td>
+                                    Rotate gesture to rotate selected shape<br/>
+                                    <img src="help_basic_7.png" />
+                                </td>
+                                <td>
+                                    Two finger drag to scroll canvas<br/>
+                                    <img src="help_basic_8.png" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Select any shape by tapping<br/>
+                                    <img src="help_basic_9.png" />
+                                </td>
+                                <td>
+                                    Drag the corner of the selection rectangle to resize the shape<br/>
+                                    <img src="help_basic_10.png" />
+                                </td>
+                                <td>
+                                    Drag the top left corner of the selection rectangle to rotate<br/>
+                                    <img src="help_basic_11.png" />
+                                </td>
+                                <td>
+                                    While rotating the shape
+                                    <img src="help_basic_12.png" />
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="contentTitle"><h1>Shape recognition</h1></div>
+                        <div class="contentText">
+                            <p>Please note that drawing should be done in single stroke, that means once a user starts drawing, the user must complete the shape before lifting finger or pencils from the device.</p>
+                            <br/>
+                        </div>
+                        <table class="basic_table">
+                            <tr>
+                                <th>Drawing</th>
+                                <th>Recognized shape</th>
+                                <th>Drawing</th>
+                                <th>Recognized shape</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="help_shape_line_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_shape_line_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_shape_two_line_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_shape_two_line_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_polyline_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_polyline_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_triangle_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_triangle_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_rect_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_rect_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_pgram_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_pgram_b.png"/>
+                                    <br/>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_diamond_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_diamond_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_circle_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_circle_b.png"/>
+                                    <br/>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_ellipse_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_ellipse_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_arrow_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_arrow_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_curve_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_curve_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_star_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_star_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_decision_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <br/>
+                                    <img src="help_shape_decision_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="contentTitle"><h1>Drawing and erasing arrow</h1></div>
+                        <div class="contentText">
+                            <p>Arrows can be added or deleted (by gesture drawing) from the end points of connections and poly lines.</p>
+                            <p>Please note that drawing should be done in single stroke, that means once a user starts drawing, the user must complete the gesture before lifting finger or pencils from the device. In the screenshots below, it is assumed that lines are already present and user only does the gesture drawing to add or erase arrows. </p>
+                            <br/>
+                        </div>
+                        <table class="basic_table">
+                            <tr>
+                                <th>Drawing</th>
+                                <th>Recognition</th>
+                                <th>Drawing</th>
+                                <th>Recognition</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="help_arrow_draw_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_arrow_draw_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_arrow_draw_solid_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_arrow_draw_solid_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <img src="help_arrow_delete_1.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_arrow_delete_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_arrow_delete_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_arrow_delete_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="contentTitle"><h1>Connecting shapes</h1></div>
+                        <div class="contentText">
+                            <p>Please note that drawing should be done in single stroke, that means once a user starts drawing, the user must complete the connection before lifting finger or pencils from the device. In the screenshots below, it is assumed that the two shapes are already present before connecting. The following screenshots describe how a gesture drawing can be done to connect shapes.</p>
+                            <br/>
+                        </div>
+                        <table class="basic_table">
+                            <tr>
+                                <th>Drawing</th>
+                                <th>Recognized connection</th>
+                                <th>Drawing</th>
+                                <th>Recognized connection</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="help_connect_1_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_1_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_2_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_2_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <img src="help_connect_3_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_3_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_4_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_4_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <img src="help_connect_5_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_5_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_6_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_6_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <img src="help_connect_7_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_7_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_8_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_connect_8_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="contentTitle"><h1>Adding text</h1></div>
+                        <table class="basic_table">
+                            <tr>
+                                <td>
+                                    Double tap on any closed shape to add text<br/>
+                                    <img src="help_text_1.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Double tap on connection line to add text on connection line<br/>
+                                    <img src="help_text_2.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Double tap anywhere else to add floating text<br/>
+                                    <img src="help_text_3.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Floating text can be rotated
+                                    <img src="help_text_4.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <div class="contentTitle"><h1>Customizing connection</h1></div>
+                        <table class="basic_table">
+                            <tr>
+                                <td>
+                                    Tap on any connection to select<br/>
+                                    <img src="help_select_connection.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Drag the little square at the end of connection line to move along shape's boundary<br/>
+                                    <img src="help_move_con_end_point.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Move the little square on connection line to change the connection<br/>
+                                    <img src="help_move_con_control.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    While shape is selected, drag the text on the connection line to move the text along connection line</br>
+                                    <img src="help_move_text_con.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+
+
+                        <div class="contentTitle"><h1>Customizing shape</h1></div>
+                        <table class="basic_table">
+                            <tr>
+                                <td>
+                                    Tap on any shape to select
+                                    <img src="help_vedit_1.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                     Tap on any vertex or control point to get the vertex handle
+                                    <img src="help_vedit_2.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Vertex handle
+                                    <img src="help_vedit_3.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Move the vertex by dragging the vertex handle placing finger anywhere on the vertex handle
+                                    <img src="help_vedit_4.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <div class="contentTitle"><h1>Regularize shape</h1></div>
+                        <table class="basic_table">
+                            <tr>
+                                <td>
+                                    Rounded rectangle
+                                    <img src="help_re_rounded_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_re_rounded_b.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    Square
+                                    <img src="help_re_square_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_re_square_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    Equilateral triangle
+                                    <img src="help_re_triangle_a.png"/>
+                                    <br/>
+                                </td>
+                                <td>
+                                    <img src="help_re_triangle_b.png"/>
+                                    <br/>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="contentTitle"><h1>Limitations in free version</h1></div>
+                        <div class="contentText">
+                            <p><strong>iOS free app</strong></p>
+                            <p>In free version, you can export non lekh formats (e.g. jpg, png, svg etc) only for five times. After that you will be prompted for In App Purchase of export feature. You cannot export lekh format in free version.</p>
+                            <br/>
+
+                            <p><strong>Android free app</strong></p>
+                            <p>The Android version of the free app displays advertisements. To Remove advertisements, In App Purchase required.</p>
+                        </div>
+                        <br/><br/>
+                        <div class="center">For bug report, feedback and suggestions, send email to <a href="mailto:info@lekhapp.com" target="_top">info@lekhapp.com</a></div>
+                    </div>
+                    <div id="footer"></div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,129 @@
+html, body {
+text-align: center;
+}
+p {text-align: left;}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background:gray;
+}
+*
+{
+  margin: 0 auto 0 auto;
+  text-align:left;
+ }
+
+#doctitle {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 45px;
+}
+.center {
+    text-align: center;
+}
+
+#page
+{
+  margin: 0 auto 0 auto; 
+  display: block; 
+  height:auto;
+  position: relative; 
+  overflow: hidden; 
+  background-color: #ffffff;
+  width: 750px;
+}
+
+.context_menu_img 
+{
+    width: 300px;
+    height: 140px;
+}
+
+.basic_table
+{
+    width: 96%;
+    border-spacing: 10px;
+}
+
+.basic_table td
+{
+    width: 33%;
+    padding: 10px;
+}
+
+.basic_table img
+{
+    width: 120px;
+    height: 120px;
+}
+
+.contentPara
+{
+    text-align: justify;
+}
+
+.contentTitle
+{
+    width:700px;
+    height:44px;
+    margin-top:20px;
+    margin-left:25px;
+    margin-right:25px;
+    background-repeat:no-repeat;
+}
+
+.contentTitle h1
+{
+padding-top:8px;
+font-size:25px;
+font-weight:bold;
+background-image:url(help_tab_back.png);
+color:#071027;
+text-align: center;
+}
+
+.contentText
+{
+width:680px;
+padding-left:30px;
+padding-right:30px;
+font-size:14px;
+color:#030712;
+line-height:25px;
+}
+
+a
+{
+text-decoration:none;
+color:#223F8D;
+}
+
+a:hover
+{
+color:#5478D6;
+}
+
+#footer {
+width: 750px;
+height:49px;
+text-align:center;
+font-size:9px;
+color:#223F8D;
+padding-top:36px;
+}
+
+#top {
+width: 750px;
+height:25px;
+text-align:center;
+font-size:9px;
+color:#223F8D;
+}
+
+html, body {
+text-align: center;
+}
+p {text-align: left;}
